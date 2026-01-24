@@ -8,61 +8,169 @@ backend:
 media_folder: "src/static/img"
 public_folder: "/static/img"
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dmds5npfk
+    api_key: 772218142563972
+
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "src/posts"
+
+  # =========================
+  # HOME PAGE (single file)
+  # =========================
+  - name: "home"
+    label: "Home Page"
+    files:
+      - name: "home"
+        label: "Homepage Content"
+        file: "src/content/home/index.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Background Image", name: "background_image", widget: "image" }
+              - { label: "Background Image Alt", name: "background_image_alt", widget: "string" }
+
+          - label: "Philosophy"
+            name: "philosophy"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "markdown" }
+              - { label: "Philosophy Image", name: "image", widget: "image" }
+              - { label: "Philosophy Image Alt", name: "image_alt", widget: "string" }
+
+          - label: "For Couples Who"
+            name: "couples"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "markdown" }
+              - { label: "Couples Image", name: "image", widget: "image" }
+
+          - label: "Filmmaker"
+            name: "filmmaker"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Filmmaker Image", name: "image", widget: "image" }
+              - { label: "Text", name: "text", widget: "markdown" }
+
+          - label: "Experience"
+            name: "experience"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "markdown" }
+              - { label: "Experience Image", name: "image", widget: "image" }
+              - { label: "Experience Image Alt", name: "image_alt", widget: "string" }
+
+          - label: "Inquiry CTA"
+            name: "inquiry_cta"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "markdown" }
+              - { label: "Button Label", name: "button_label", widget: "string" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Location Heading", name: "location_heading", widget: "string" }
+              - { label: "Location Text", name: "location_text", widget: "string" }
+              - { label: "Contact Heading", name: "contact_heading", widget: "string" }
+              - { label: "Contact Text", name: "contact_text", widget: "string" }
+  # =========================
+  # FILMS (collection)
+  # =========================
+  - name: "films"
+    label: "Films"
+    label_singular: "Film"
+    folder: "src/content/films"
     create: true
-    editor:
-      preview: false
+    slug: "{{slug}}"
+    preview_path: "films/{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+      - { label: "Video URL (Vimeo or YouTube)", name: "video_url", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", required: true, hint: "Determines the order in which films appear" }
+
+  # =========================
+  # PAGES (future-friendly)
+  # =========================
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["Tags", "created", "from", "config.yml"]
-  - label: "Settings"
-    name: "settings"
-    editor:
-      preview: false
-    files:
-      - label: "Navigation"
-        name: "items"
-        file: "src/_data/navigation.yaml"
-        fields:
-          - label: Nav Items
-            name: items
-            widget: list
-            allow_add: false
-            collapsed: false
-            fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
-        fields:
-          - label: Nav Items
-            name: links
-            widget: list
-            collapsed: false
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
-      - label: "Meta Settings"
-        name: "settings"
-        file: "src/_data/settings.yaml"
-        fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+
+# collections:
+#   - label: "Blog"
+#     name: "blog"
+#     folder: "src/posts"
+#     create: true
+#     editor:
+#       preview: false
+#     fields:
+#       - { label: "Title", name: "title", widget: "string" }
+#       - { label: "Description", name: "description", widget: "string" }
+#       - { label: "Author", name: "author", widget: "string" }
+#       - { label: "Publish Date", name: "date", widget: "datetime" }
+#       - { label: "Body", name: "body", widget: "markdown" }
+#       - widget: select
+#         label: "tags"
+#         name: "tags"
+#         multiple: true
+#         create: true
+#         options: ["Tags", "created", "from", "config.yml"]
+#   - label: "Settings"
+#     name: "settings"
+#     editor:
+#       preview: false
+#     files:
+#       - label: "Navigation"
+#         name: "items"
+#         file: "src/_data/navigation.yaml"
+#         fields:
+#           - label: Nav Items
+#             name: items
+#             widget: list
+#             allow_add: false
+#             collapsed: false
+#             fields:
+#               - { label: Title, name: text, widget: string }
+#               - { label: URL, name: url, widget: string }
+#       - label: "Quick Links"
+#         name: "links"
+#         file: "src/_data/quicklinks.yaml"
+#         fields:
+#           - label: Nav Items
+#             name: links
+#             widget: list
+#             collapsed: false
+#             fields:
+#               - { label: Title, name: title, widget: string }
+#               - { label: URL, name: url, widget: string }
+#               - { label: Description, name: desc, widget: string }
+#       - label: "Meta Settings"
+#         name: "settings"
+#         file: "src/_data/settings.yaml"
+#         fields:
+#           - { label: Name, name: name, widget: string }
+#           - { label: Author, name: author, widget: string }
+#           - { label: URL, name: url, widget: string }

@@ -1,0 +1,23 @@
+{% macro image(
+  src,
+  alt = "",
+  widths = [400, 800, 1600],
+  sizes = "(max-width: 768px) 90vw, 800px",
+  loading = "lazy",
+  class = ""
+) %}
+  {% if src %}
+    <img
+      src="{{ src | cloudinary(widths[1]) }}"
+      srcset="
+        {% for w in widths %}
+          {{ src | cloudinary(w) }} {{ w }}w{% if not loop.last %}, {% endif %}
+        {% endfor %}
+      "
+      sizes="{{ sizes }}"
+      alt="{{ alt }}"
+      loading="{{ loading }}"
+      class="{{ class }}"
+    >
+  {% endif %}
+{% endmacro %}

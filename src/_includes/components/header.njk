@@ -1,0 +1,25 @@
+<header class="site-header">
+
+    <!-- Brand -->
+    <a href="/" class="site-logo">
+      SYLVAN
+    </a>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <ul>
+        {% for item in navigation.primary %}
+          <li>
+            <a
+              href="{{ item.url }}"
+              class="nav-link"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    
+</header>
+

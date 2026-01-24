@@ -1,0 +1,18 @@
+<section class="hero" id="hero">
+
+	{% from "components/bg-image.njk" import bgImage %}
+
+	{% call bgImage(
+		hero.background_image, 
+		2400, 
+		"hero-bg", 
+		"center", 
+		true
+	) %}
+
+		<div class="container overlay-content">
+			<h1>{{ hero.headline }}</h1>
+		</div>
+	{% endcall %}
+
+</section>

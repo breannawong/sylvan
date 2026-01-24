@@ -1,0 +1,162 @@
+:root {
+  /* =========================
+     PRIMITIVE TOKENS
+     ========================= */
+
+  /* Neutral */
+  --gray-800: #1F2223;
+  --gray-600: #3B3227;
+  --gray-400: #DBD5CC;
+  --gray-400-rgb: 219, 213, 204;
+  --gray-200: #EFECE6;
+  --gray-200-rgb: 239, 236, 230;
+
+  /* Brand */
+  --green-700: #2D3932;
+  --green-700-rgb: 45, 57, 50;
+
+  /* Status */
+  --green-500: #22c55e;
+  --yellow-500: #f59e0b;
+  --red-500: #ef4444;
+
+  /* Font families */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font sizes */
+  --font-size-xs: clamp(0.75rem, 0.1vw + 0.75rem, 0.85rem);
+  --font-size-sm: clamp(0.875rem, 0.2vw + 0.85rem, 0.95rem);
+  --font-size-base: clamp(1rem, 0.3vw + 0.95rem, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 0.4vw + 1.05rem, 1.25rem);
+  --font-size-xl: clamp(1.375rem, 0.8vw + 1.2rem, 1.75rem);
+  --font-size-2xl: clamp(1.75rem, 1.2vw + 1.4rem, 2.25rem);
+  --font-size-3xl: clamp(2.25rem, 1.8vw + 1.75rem, 3rem);
+  --font-size-4xl: clamp(2.75rem, 2.6vw + 2rem, 3.75rem);
+  --font-size-5xl: clamp(3rem, 4vw + 1rem, 5.5rem);
+
+  /* Line heights */
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+
+  /* Spacing */
+  --space-a: .25rem;
+  --space-b: .5rem;
+  --space-c: 1rem;
+  --space-d: 1.5rem;
+  --space-e: 2rem;
+  --space-f: 2.5rem;
+  --space-g: 3rem;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: .75rem;
+
+
+  /* =========================
+     SEMANTIC TOKENS
+     ========================= */
+
+  /* Surfaces */
+  --color-surface: var(--gray-200);
+  --color-surface-muted: var(--gray-400);
+  --color-surface-raised: var(--gray-600);
+  --color-surface-inverse: var(--gray-800);
+  --color-surface-overlay: rgba(var(--green-700-rgb), 0.6);
+  --color-surface-card: rgba(var(--gray-200-rgb), 0.8);
+  --color-surface-card-inverse: rgba(var(--green-700-rgb), 0.8);
+
+  /* Text */
+  --color-text-primary: var(--gray-800);
+  --color-text-inverse: var(--gray-200);
+  --color-text-link: var(--gray-800);
+  --color-text-link-hover: var(--gray-600);
+  --color-text-link-active: color-mix(in srgb, var(--gray-800) 15%, transparent);
+  --color-text-link-inverse: var(gray-200);
+  --color-text-link-inverse-hover: var(--gray-400);
+  --color-text-link-inverse-active: color-mix(in srgb, var(--gray-200) 15%, transparent);
+
+  /* Borders */
+  --color-border: var(--gray-200);
+
+  /* Accent */
+  --color-accent: var(--green-500);
+  /*--accent-hover: var(--blue-600);
+  --accent-active: var(--blue-700);
+  --accent-subtle: color-mix(in srgb, var(--accent) 15%, transparent);*/
+
+  /* Status */
+  --color-success: var(--green-500);
+  --color-warning: var(--yellow-500);
+  --color-danger: var(--red-500);
+
+   /* Font roles */
+  --font-heading: var(--font-serif);
+  --font-body: var(--font-sans);
+  --font-ui: var(--font-sans);
+
+  /* Heading styles */
+  --font-weight-heading: var(--font-weight-semibold);
+  --line-height-heading: var(--line-height-tight);
+
+  /* Body text styles */
+  --font-weight-body: var(--font-weight-regular);
+  --line-height-body: var(--line-height-relaxed);
+
+  /* UI text styles */
+  --font-weight-ui: var(--font-weight-medium);
+  --line-height-ui: var(--line-height-normal);
+
+  /* Padding */
+  --pad-inline-sm: clamp(var(--space-c), 3vw, var(--space-d));
+  --pad-inline-md: clamp(var(--space-d), 4vw, var(--space-e));
+  --pad-inline-lg: clamp(var(--space-e), 5vw, var(--space-g));
+
+  --pad-block-sm: clamp(var(--space-d), 4vw, var(--space-e));
+  --pad-block-md: clamp(var(--space-e), 5vw, var(--space-f));
+  --pad-block-lg: clamp(var(--space-f), 6vw, var(--space-g));
+  
+
+  /* =========================
+     COMPONENT TYPOGRAPHY TOKENS
+     ========================= */
+
+  /* Headings */
+  --font-size-h1: var(--font-size-4xl);
+  --font-size-h2: var(--font-size-3xl);
+  --font-size-h3: var(--font-size-2xl);
+  --font-size-h4: var(--font-size-xl);
+  --font-size-hero: var(--font-size-5xl);
+
+  /* Body */
+  --font-size-body: var(--font-size-base);
+  --font-size-body-small: var(--font-size-sm);
+
+  /* Meta / captions */
+  --font-size-caption: var(--font-size-xs);
+
+  /* Buttons */
+  --font-size-button: var(--font-size-xs);
+
+
+  /* =========================
+     COMPONENT TOKENS
+     ========================= */
+
+  --padding-container-h: var(--space-g);
+  --padding-container-v: var(--space-f);
+
+  --padding-button-h: var(--space-d);
+  --padding-button-v: var(--space-b);
+
+  --radius-button: var(--radius-md);
+}

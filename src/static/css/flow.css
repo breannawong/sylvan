@@ -1,0 +1,15 @@
+.flow {
+  --flow-space: var(--space-d);
+}
+
+.flow-tight {
+  --flow-space: var(--space-c);
+}
+
+.flow-loose {
+  --flow-space: var(--space-e);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, var(--space-e));
+}

@@ -1,0 +1,24 @@
+<section id="couples">
+
+	{% from "components/bg-image.njk" import bgImage %}
+
+	{% call bgImage(
+		couples.image, 
+		2400, 
+		"couples-bg", 
+		"center", 
+		false
+	) %}
+
+		<div class="container">
+			<div class="floating-card-layout">
+				<div class="floating-card floating-card-inverse">				
+					<h2>{{ couples.heading }}</h2>
+			    	{{ couples.text | markdownify | safe }}
+				</div>
+			</div>
+		</div>
+	{% endcall %}
+
+</section>
+

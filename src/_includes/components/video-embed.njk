@@ -1,0 +1,18 @@
+{% set videoUrl = videoUrl or "" %}
+
+{% if videoUrl %}
+  {# Extract Vimeo ID #}
+  {% set vimeoId = videoUrl | replace("https://vimeo.com/", "") %}
+
+  <div class="video-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe
+      src="https://player.vimeo.com/video/{{ vimeoId }}"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+{% else %}
+  <p>No video URL provided.</p>
+{% endif %}

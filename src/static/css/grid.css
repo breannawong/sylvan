@@ -1,0 +1,30 @@
+.layout-2col, 
+.layout-3col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-f);
+}
+
+@media (min-width: 768px) {
+  .layout-2col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .layout-2col > .flow {
+    --flow-space: 0;
+  }
+
+  .layout-2col-aside {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .layout-2col-media {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (min-width: 1024px) {
+	.layout-3col {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}

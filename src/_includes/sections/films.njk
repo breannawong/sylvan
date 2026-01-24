@@ -1,0 +1,15 @@
+<section class="section section-inverse" id="films">
+  <div class="container">
+    <h2 class="mb-8">Selected Films</h2>
+
+    <div class="layout-3col">
+      {% for film in collections.films %}
+      {% set videoUrl = film.data.video_url %}
+      <div>	      
+		  {% include "components/video-embed.njk" %}
+	      <h3>{{ film.data.title }}</h3>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

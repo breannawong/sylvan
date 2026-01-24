@@ -2,6 +2,7 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
+const cloudinary = require("./src/_config/filters/cloudinary");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -38,6 +39,8 @@ module.exports = function (eleventyConfig) {
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
+  eleventyConfig.addPassthroughCopy({ "src/static/css": "static/css" });
+
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
@@ -52,6 +55,31 @@ module.exports = function (eleventyConfig) {
 
     return content;
   });
+
+  eleventyConfig.addCollection("films", function(collectionApi) {
+    return collectionApi.getAll().filter(item => item.data.collection === "films")
+      .sort((a, b) => {
+        const orderA = a.data.order ?? 0;
+        const orderB = b.data.order ?? 0;
+        return orderA - orderB;
+      });
+  });
+
+  const markdownIt = require("markdown-it");
+  const md = new markdownIt({ html: true });
+
+  eleventyConfig.addFilter("markdownify", (content) => {
+    return md.render(content || "");
+  });
+
+  eleventyConfig.addFilter("cloudinary", cloudinary);
+  return {
+    dir: {
+      input: "src",
+      output: "_site"
+    }
+  };
+
 
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk

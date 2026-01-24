@@ -1,0 +1,26 @@
+<section class="section" id="philosophy">
+	<div class="container">
+		<div class="layout-2col">
+			<div class="flow">
+				<h2>{{ philosophy.heading }}</h2>
+
+				<div class="prose">
+					{{ philosophy.text | markdownify | safe }}
+				</div>
+
+				<a href="/inquire" class="btn">Inquire</a>
+			</div>
+
+			{% from "components/image.njk" import image %}
+
+			{{ image(
+			philosophy.image,
+			philosophy.image_alt,
+			[800, 1600, 2400],
+			"100vw",
+			"eager",
+			"philosophy-image"
+			) }}
+		</div>
+	</div>
+</section>

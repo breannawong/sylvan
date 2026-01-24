@@ -1,0 +1,56 @@
+/* base */
+html {
+  font-family: var(--font-body);
+  color: var(--color-text-primary, #fff);
+  background-color: var(--color-surface);
+  line-height: var(--line-height-body, 1.6);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-heading, 700);
+  line-height: var(--line-height-heading, 1.2);
+  margin-bottom: var(--space-md, 1rem);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+}
+
+p {
+  margin-bottom: var(--space-md, 1rem);
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--color-text-link-active);
+}

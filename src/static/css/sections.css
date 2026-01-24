@@ -1,0 +1,35 @@
+.section {
+  padding-block: var(--pad-block-md);
+}
+
+.section-tight {
+  padding-block: var(--pad-block-sm);
+}
+
+.section-loose {
+  padding-block: var(--pad-block-lg);
+}
+
+.section-inverse {
+	background-color: var(--color-surface-inverse);
+	color: var(--color-text-inverse);
+}
+
+.section-muted {
+	background-color: var(--color-surface-muted);
+}
+
+.container {
+	width: 100%;
+	max-width: 80rem;
+	margin-inline: auto;
+	padding-inline: var(--pad-inline-md);
+}
+
+.container-tight {
+  padding-inline: var(--pad-inline-sm);
+}
+
+.container-wide {
+  padding-inline: var(--pad-inline-lg);
+}

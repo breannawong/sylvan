@@ -1,0 +1,31 @@
+<section class="section section-muted" id="filmmaker">
+  <div class="container">
+
+  	{% from "components/bg-image.njk" import bgImage %}
+
+	{% call bgImage(
+		filmmaker.image, 
+		2400, 
+		"filmmaker-bg", 
+		"center", 
+		false
+	) %}
+
+		<div class="container">
+			<div class="floating-card-layout floating-card-layout-end">
+				<div class="section">
+					<div class="flow">
+						<div class="floating-card floating-card-tight floating-card-inline">				
+							<h2>{{ filmmaker.heading }}</h2>
+						</div>
+						<div class="floating-card floating-card-tight">
+						    {{ filmmaker.text | markdownify | safe }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endcall %}
+
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="section" id="experience">
+  <div class="container">
+  	<div class="layout-2col">
+	  	{% from "components/image.njk" import image %}
+
+		{{ image(
+		  experience.image,
+		  experience.image_alt,
+		  [800, 1600, 2400],
+		  "100vw",
+		  "eager",
+		  "experience-image"
+		) }}
+
+	    <div>
+		    <h2>{{ experience.heading }}</h2>
+		  	{{ experience.text | markdownify | safe }}
+	  	</div>
+    </div>
+  </div>
+</section>

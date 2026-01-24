@@ -1,0 +1,23 @@
+
+{% macro bgImage(
+  src,
+  width = 2000,
+  class = "",
+  position = "center",
+  overlay = false,
+  cover = true
+) %}
+  {% if src %}
+    <div
+      class="bg-img {{ class }} {% if cover %} bg-cover {% endif %}"
+      style="background-image: url('{{ src | cloudinary(width) }}'); background-position: {{ position }};"
+    >
+      {% if overlay %}
+        <div class="overlay"></div>
+      {% endif %}
+
+      {{ caller() }}
+        
+    </div>
+  {% endif %}
+{% endmacro %}
