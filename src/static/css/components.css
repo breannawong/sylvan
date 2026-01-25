@@ -31,10 +31,19 @@
   font-weight: var(--font-weight-heading);
 }
 
+.nav-link {
+  font-size: var(--font-size-body-sm);
+}
+
 /* Footer */
 
 .site-footer p {
   font-size: var(--font-size-caption);
+  margin-bottom: 0;
+}
+
+.site-footer .site-logo {
+  margin-bottom: var(--space-b);
 }
 
 /* BG Image */
@@ -64,7 +73,6 @@
 /*Floating card layout*/
 
 .floating-card-layout {
-  min-height: 80vh;
   display: flex;
   align-items: center;
 }
@@ -79,6 +87,7 @@
   background-color: var(--color-surface-card);
   color: var(--color-text-primary);
   backdrop-filter: blur(2px);
+  border-radius: var(--radius-floating-card);
 }
 
 .floating-card > :last-child {
@@ -96,6 +105,12 @@
 
 .floating-card-inline {
   display: inline-block;
+}
+
+@media (min-width: 480px) {
+  .floating-card-layout {
+    min-height: 70vh;
+  }
 }
 
 @media (min-width:768px) {

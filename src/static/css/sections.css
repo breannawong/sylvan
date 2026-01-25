@@ -10,6 +10,12 @@
   padding-block: var(--pad-block-lg);
 }
 
+.section-height {
+	display: flex;
+	align-items: center;
+	min-height: 55vh;
+}
+
 .section-inverse {
 	background-color: var(--color-surface-inverse);
 	color: var(--color-text-inverse);

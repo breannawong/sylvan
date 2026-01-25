@@ -1,0 +1,24 @@
+@media (max-width: 479px) {
+	.filmmaker-bg {
+		background-image: none !important;
+	}
+}
+
+@media (min-width: 480px) {
+	.filmmaker-bg {
+		background-position: left !important;
+		border-radius: var(--radius-img);
+	}
+	.filmmaker-image {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.experience-image {
+		margin-top: var(--pad-block-sm);
+	}
+	.filmmaker-bg {
+		background-position: center !important;
+	}
+}

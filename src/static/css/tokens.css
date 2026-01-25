@@ -57,9 +57,10 @@
   --space-g: 3rem;
 
   /* Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: .75rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 
 
   /* =========================
@@ -133,8 +134,8 @@
   /* Headings */
   --font-size-h1: var(--font-size-4xl);
   --font-size-h2: var(--font-size-3xl);
-  --font-size-h3: var(--font-size-2xl);
-  --font-size-h4: var(--font-size-xl);
+  --font-size-h3: var(--font-size-xl);
+  --font-size-h4: var(--font-size-lg);
   --font-size-hero: var(--font-size-5xl);
 
   /* Body */
@@ -158,5 +159,7 @@
   --padding-button-h: var(--space-d);
   --padding-button-v: var(--space-b);
 
-  --radius-button: var(--radius-md);
+  --radius-button: var(--radius-sm);
+  --radius-img: var(--radius-xl);
+  --radius-floating-card: var(--radius-md);
 }

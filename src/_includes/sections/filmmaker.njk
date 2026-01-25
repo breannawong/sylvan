@@ -1,6 +1,18 @@
 <section class="section section-muted" id="filmmaker">
   <div class="container">
 
+  	{% from "components/image.njk" import image %}
+
+			{{ image(
+			filmmaker.image,
+			"Dustin Stuppy",
+			[800],
+			"100vw",
+			"eager",
+			"filmmaker-image"
+			) }}
+
+
   	{% from "components/bg-image.njk" import bgImage %}
 
 	{% call bgImage(
