@@ -1,12 +1,21 @@
 <section class="section section-height section-inverse">
   <div class="container">
-  	<h2>{{ inquiry_cta.heading }}</h2>
-    <p class="mb-6 text-xl">
-      {{ inquiry_cta.text }}
-    </p>
+  <div class="layout-2col">
+  	<div>
+	  	<h2>{{ inquiry_cta.heading }}</h2>
+	    <p class="mb-6 text-xl">
+	      {{ inquiry_cta.text | markdownify | safe }}
+	    </p>
+    </div>
 
-    <a href="/inquire/" class="btn btn-inverse">
-      {{ inquiry_cta.button_label }}
-    </a>
+    <div class="form-inverse">
+	    {% from "components/form.njk" import renderForm %}
+
+		{% set inquiryForm = collections.forms | first %}
+
+		{{ renderForm(inquiryForm.data) }}
+	</div>
+
+    </div>
   </div>
 </section>

@@ -14,6 +14,7 @@
   /* Brand */
   --green-700: #2D3932;
   --green-700-rgb: 45, 57, 50;
+  --lavender-200: #C8C5CE;
 
   /* Status */
   --green-500: #22c55e;
@@ -62,6 +63,9 @@
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
 
+  /* Motion */
+  --transition-fast: 250ms ease;
+
 
   /* =========================
      SEMANTIC TOKENS
@@ -81,13 +85,14 @@
   --color-text-inverse: var(--gray-200);
   --color-text-link: var(--gray-800);
   --color-text-link-hover: var(--gray-600);
-  --color-text-link-active: color-mix(in srgb, var(--gray-800) 15%, transparent);
+  --color-text-link-active: color-mix(in srgb, var(--gray-600) 50%, var(--gray-800) 50%);
   --color-text-link-inverse: var(gray-200);
   --color-text-link-inverse-hover: var(--gray-400);
-  --color-text-link-inverse-active: color-mix(in srgb, var(--gray-200) 15%, transparent);
+  --color-text-link-inverse-active: color-mix(in srgb, var(--gray-400) 50%, var(--gray-600) 50%);
 
   /* Borders */
-  --color-border: var(--gray-200);
+  --color-border: var(--gray-600);
+  --color-border-inverse: var(--gray-200);
 
   /* Accent */
   --color-accent: var(--green-500);
@@ -159,7 +164,11 @@
   --padding-button-h: var(--space-d);
   --padding-button-v: var(--space-b);
 
+  --padding-input-h: var(--space-c);
+  --padding-input-v: var(--space-a);
+
   --radius-button: var(--radius-sm);
   --radius-img: var(--radius-xl);
   --radius-floating-card: var(--radius-md);
+  --radius-input: var(--radius-lg);
 }

@@ -3,16 +3,12 @@ title: Inquiry Form
 form_name: inquiry
 submit_label: Send Inquiry
 fields:
-  - label: First Name
-    name: first_name
+  - label: Full Name
+    name: full_name
     type: text
     required: true
     placeholder: ""
-  - required: true
-    label: Last Name
-    name: last_name
-    type: text
-  - label: Email Address
+  - label: Email
     name: email
     type: email
     required: true

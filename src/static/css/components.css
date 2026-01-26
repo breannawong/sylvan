@@ -29,6 +29,7 @@
   font-family: var(--font-heading);
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-heading);
+  letter-spacing: 2px;
 }
 
 .nav-link {
@@ -148,9 +149,110 @@
   font-family: var(--font-body);
   font-size: var(--font-size-button);
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
 }
 
-.btn-inverse {
+.btn:hover {
+  text-decoration: none;
+  color: var(--color-text-inverse);
+  background-color: color-mix(in srgb, var(--color-surface-inverse) 80%, var(--color-surface) 20%);
+}
+
+.btn-inverse,
+.form-inverse .btn {
   background-color: var(--color-surface);
   color: var(--color-text-primary);
+}
+
+.btn-inverse:hover,
+.form-inverse .btn:hover {
+  color: var(--color-text-primary);
+  background-color: color-mix(in srgb, var(--color-surface-inverse) 20%, var(--color-surface) 80%);
+}
+
+
+/*Form*/
+
+.form {
+  margin-top: var(--pad-block-sm);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-a);
+  margin-bottom: var(--space-d);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-input);
+  width: 100%;
+  padding: var(--padding-input-v) var(--padding-input-h);
+  background-color: var(--color-surface);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  background-color: color-mix(in srgb, var(--color-surface-muted) 25%, var(--color-surface) 75%);
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 2px var(--color-surface),
+    0 0 0 4px var(--color-surface-inverse);
+}
+
+.form .btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-surface),
+    0 0 0 4px var(--color-surface-inverse);
+}
+
+.form-field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.form-field label {
+  display: block;
+}
+
+.form-inverse .form-field input,
+.form-inverse .form-field select,
+.form-inverse .form-field textarea {
+  background-color: var(--color-surface-inverse);
+  border-color: var(--color-border-inverse);
+  color: var(--color-text-inverse);
+}
+
+.form-inverse .form-field input:hover,
+.form-inverse .form-field select:hover,
+.form-inverse .form-field textarea:hover {
+  background-color: color-mix(in srgb, white 5%, var(--color-surface-inverse) 95%);
+}
+
+.form-inverse .form-field input:focus-visible,
+.form-inverse .form-field select:focus-visible,
+.form-inverse .form-field textarea:focus-visible {
+  border-color: var(--color-border-inverse-focus);
+  box-shadow: 0 0 0 2px var(--color-surface-inverse),
+    0 0 0 4px var(--color-surface);
+}
+
+.form-inverse .btn:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-surface-inverse),
+    0 0 0 4px var(--color-surface);
 }

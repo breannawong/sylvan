@@ -8,6 +8,12 @@
 			    <h1>{{ title }}</h1>
 			    {{ content | safe }}
 
+			    {% from "components/form.njk" import renderForm %}
+
+				{% set inquiryForm = collections.forms | first %}
+
+				{{ renderForm(inquiryForm.data) }}
+
 		    </div>	
 
 		    <div>
