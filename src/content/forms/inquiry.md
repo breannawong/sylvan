@@ -12,7 +12,7 @@ fields:
     label: Last Name
     name: last_name
     type: text
-  - label: Email
+  - label: Email Address
     name: email
     type: email
     required: true
