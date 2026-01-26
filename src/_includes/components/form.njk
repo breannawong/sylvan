@@ -1,0 +1,49 @@
+{% macro renderForm(form) %}
+<form
+  name="{{ form.form_name }}"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
+  <input type="hidden" name="form-name" value="{{ form.form_name }}">
+
+  <p hidden>
+    <label>
+      Don’t fill this out:
+      <input name="bot-field">
+    </label>
+  </p>
+
+  <h2>{{ form.title }}</h2>
+
+  {% for field in form.fields %}
+    <div class="form-field">
+      <label for="{{ field.name }}">
+        {{ field.label }}
+        {% if field.required %}<span aria-hidden="true">*</span>{% endif %}
+      </label>
+
+      {% if field.type == "textarea" %}
+        <textarea
+          id="{{ field.name }}"
+          name="{{ field.name }}"
+          {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+          {% if field.required %}required{% endif %}
+        ></textarea>
+      {% else %}
+        <input
+          type="{{ field.type }}"
+          id="{{ field.name }}"
+          name="{{ field.name }}"
+          {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+          {% if field.required %}required{% endif %}
+        >
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <button type="submit">
+    {{ form.submit_label }}
+  </button>
+</form>
+{% endmacro %}

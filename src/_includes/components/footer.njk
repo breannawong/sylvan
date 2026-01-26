@@ -1,22 +1,24 @@
+{% macro footer(data) %}
 <footer class="site-footer">
-	<section class="section" id="experience">
-	  <div class="container">
-	  	<div class="layout-2col">	
-	  		<div>
-	  			<h2 class="site-logo">SYLVAN</h2>
-	  			{{ footer.tagline | markdownify | safe }}
-	  		</div>	  	
-		    <div class="layout-2col">
-		    	<div>
-				    <h3>{{ footer.location_heading }}</h3>
-				  	{{ footer.location_text | markdownify | safe }}
-			  	</div>
-			  	<div>
-				    <h3>{{ footer.contact_heading }}</h3>
-				  	{{ footer.contact_text | markdownify | safe }}
-			  	</div>
-		  	</div>
-	    </div>
-	  </div>
-	</section>
+  <section class="section" id="footer">
+    <div class="container">
+      <div class="layout-2col">
+        <div>
+          <h2 class="site-logo">SYLVAN</h2>
+          <p class="footer-tagline">{{ data.tagline }}</p>
+        </div>
+        <div class="layout-2col">
+          <div>
+            <h3>{{ data.location_heading }}</h3>
+            <p>{{ data.location_body | markdownify | safe }}</p>
+          </div>
+          <div>
+            <h3>{{ data.contact_heading }}</h3>
+            <p>{{ data.contact_body | markdownify | safe }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </footer>
+{% endmacro %}

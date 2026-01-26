@@ -1,9 +1,29 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  <article class="page">
-    <h1>{{ title }}</h1>
+  <article class="page section">
+  	<div class="container">
+	  	<div class="layout-2col">
+		  	<div>
+			    <h1>{{ title }}</h1>
+			    {{ content | safe }}
 
-    {{ content | safe }}
+			    {% from "components/form.njk" import renderForm %}
+
+				{% set inquiryForm = collections.forms | first %}
+
+				{{ renderForm(inquiryForm.data) }}
+
+		    </div>	
+
+		    <div>
+			    {% if image %}
+			      <div class="page-hero">
+			        <img src="{{ image }}" alt="{{ image_alt | default(title) }}">
+			      </div>
+			    {% endif %}
+		    </div>
+	    </div>
+    </div>
   </article>
 {% endblock %}

@@ -65,6 +65,14 @@ module.exports = function (eleventyConfig) {
       });
   });
 
+  eleventyConfig.addCollection("footer", (collectionApi) => {
+    return collectionApi.getFilteredByGlob("src/content/footer/*.md");
+  });
+
+  eleventyConfig.addCollection("forms", (collectionApi) => {
+    return collectionApi.getFilteredByGlob("src/content/forms/*.md");
+  });
+
   const markdownIt = require("markdown-it");
   const md = new markdownIt({ html: true });
 

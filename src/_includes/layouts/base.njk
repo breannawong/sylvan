@@ -27,7 +27,9 @@
       {% block content %}{% endblock %}
     </main>
 
-    {% include "components/footer.njk" %}
+    {% from "components/footer.njk" import footer %}
+
+    {{ footer(collections.footer[0].data) }}
 
     <script src="/static/js/alpine.js"></script>
 

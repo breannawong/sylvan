@@ -79,15 +79,6 @@ collections:
               - { label: "Text", name: "text", widget: "markdown" }
               - { label: "Button Label", name: "button_label", widget: "string" }
 
-          - label: "Footer"
-            name: "footer"
-            widget: "object"
-            fields:
-              - { label: "Tagline", name: "tagline", widget: "string" }
-              - { label: "Location Heading", name: "location_heading", widget: "string" }
-              - { label: "Location Text", name: "location_text", widget: "string" }
-              - { label: "Contact Heading", name: "contact_heading", widget: "string" }
-              - { label: "Contact Text", name: "contact_text", widget: "string" }
   # =========================
   # FILMS (collection)
   # =========================
@@ -118,6 +109,61 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
       - { label: "Body", name: "body", widget: "markdown" }
+      # Optional page image
+      - label: "Page Image"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Page Image Alt"
+        name: "image_alt"
+        widget: "string"
+        required: false
+  # =========================
+  # FOOTER
+  # =========================
+  - name: "footer"
+    label: "Footer"
+    files:
+      - label: "Footer"
+        name: "footer"
+        file: "src/content/footer/footer.md"
+        editor:
+          preview: false
+        fields:
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Location Heading", name: "location_heading", widget: "string" }
+          - { label: "Location Body", name: "location_body", widget: "markdown" }
+          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
+          - { label: "Contact Body", name: "contact_body", widget: "markdown" }
+  - name: "forms"
+    label: "Forms"
+    files:
+      - label: "Inquiry Form"
+        name: "inquiry"
+        file: "src/content/forms/inquiry.md"
+        editor:
+          preview: false
+        fields:
+          - { label: "Form Title", name: "title", widget: "string" }
+          - { label: "Form Name", name: "form_name", widget: "string", hint: "Do not change the form name once submissions exist." }
+          - { label: "Submit Button Label", name: "submit_label", widget: "string" }
+
+          - label: "Fields"
+            name: "fields"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Name (no spaces)", name: "name", widget: "string" }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options:
+                  - text
+                  - email
+                  - textarea
+              - { label: "Required", name: "required", widget: "boolean", default: false }
+              - { label: "Placeholder", name: "placeholder", widget: "string", required: false }
 
 # collections:
 #   - label: "Blog"
