@@ -40,6 +40,12 @@ experience:
   image_alt: A beautifully decorated floral altar
 layout: layouts/home.njk
 permalink: /
+seo:
+  title: Sylvan Wedding Films | Wedding Videographer in Pittsburgh
+  description: Naturally cinematic wedding films
+  og_title: Sylvan Wedding Films
+  og_description: test
+  og_image: https://res.cloudinary.com/dmds5npfk/image/upload/v1768843752/The_Experience-Kelsey_and_Will-Altar_rtm8p7.jpg
 hero:
   headline: Naturally cinematic wedding films
   background_image: https://res.cloudinary.com/dmds5npfk/image/upload/v1768837686/sylvan-hero_onjksa.jpg

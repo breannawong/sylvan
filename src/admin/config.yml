@@ -21,7 +21,7 @@ media_library:
     api_key: 772218142563972
 
 # Please run "npx netlify-cms-proxy-server" for local backend
-local_backend: true
+# local_backend: true
 # publish_mode: editorial_workflow
 collections:
 
@@ -35,9 +35,22 @@ collections:
         label: "Homepage Content"
         file: "src/content/home/index.md"
         fields:
+          # SEO Fields
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "SEO Title", name: "title", widget: "string", default: "Sylvan Wedding Films | Wedding Videographer in Pittsburgh" }
+              - { label: "Meta Description", name: "description", widget: "text" }
+              - { label: "OG Title", name: "og_title", widget: "string" }
+              - { label: "OG Description", name: "og_description", widget: "text" }
+              - { label: "OG Image", name: "og_image", widget: "image" }
+
           - label: "Hero"
             name: "hero"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Headline", name: "headline", widget: "string" }
               - { label: "Subhead", name: "subhead", widget: "string" }
@@ -48,6 +61,7 @@ collections:
           - label: "Philosophy"
             name: "philosophy"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Text", name: "text", widget: "markdown" }
@@ -57,6 +71,7 @@ collections:
           - label: "For Couples Who"
             name: "couples"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Text", name: "text", widget: "markdown" }
@@ -65,6 +80,7 @@ collections:
           - label: "Filmmaker"
             name: "filmmaker"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Filmmaker Image", name: "image", widget: "image" }
@@ -73,6 +89,7 @@ collections:
           - label: "Experience"
             name: "experience"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Text", name: "text", widget: "markdown" }
@@ -82,6 +99,7 @@ collections:
           - label: "Inquiry CTA"
             name: "inquiry_cta"
             widget: "object"
+            collapsed: true
             fields:
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Text", name: "text", widget: "markdown" }
@@ -105,7 +123,7 @@ collections:
       - { label: "Order", name: "order", widget: "number", required: true, hint: "Determines the order in which films appear" }
 
   # =========================
-  # PAGES (future-friendly)
+  # PAGES (including Inquiry)
   # =========================
   - name: "pages"
     label: "Pages"
@@ -117,16 +135,26 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
       - { label: "Body", name: "body", widget: "markdown" }
-      # Optional page image
       - label: "Page Image"
         name: "image"
         widget: "image"
         required: false
-
       - label: "Page Image Alt"
         name: "image_alt"
         widget: "string"
         required: false
+      # SEO Fields for each page
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "SEO Title", name: "title", widget: "string", hint: "e.g. Inquire | Sylvan Wedding Films" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "OG Title", name: "og_title", widget: "string" }
+          - { label: "OG Description", name: "og_description", widget: "text" }
+          - { label: "OG Image", name: "og_image", widget: "image" }
+
   # =========================
   # FOOTER
   # =========================
@@ -144,6 +172,10 @@ collections:
           - { label: "Location Body", name: "location_body", widget: "markdown" }
           - { label: "Contact Heading", name: "contact_heading", widget: "string" }
           - { label: "Contact Body", name: "contact_body", widget: "markdown" }
+
+  # =========================
+  # FORMS
+  # =========================
   - name: "forms"
     label: "Forms"
     files:
@@ -156,7 +188,6 @@ collections:
           - { label: "Form Title", name: "title", widget: "string" }
           - { label: "Form Name", name: "form_name", widget: "string", hint: "Do not change the form name once submissions exist." }
           - { label: "Submit Button Label", name: "submit_label", widget: "string" }
-
           - label: "Fields"
             name: "fields"
             widget: "list"
@@ -172,59 +203,3 @@ collections:
                   - textarea
               - { label: "Required", name: "required", widget: "boolean", default: false }
               - { label: "Placeholder", name: "placeholder", widget: "string", required: false }
-
-# collections:
-#   - label: "Blog"
-#     name: "blog"
-#     folder: "src/posts"
-#     create: true
-#     editor:
-#       preview: false
-#     fields:
-#       - { label: "Title", name: "title", widget: "string" }
-#       - { label: "Description", name: "description", widget: "string" }
-#       - { label: "Author", name: "author", widget: "string" }
-#       - { label: "Publish Date", name: "date", widget: "datetime" }
-#       - { label: "Body", name: "body", widget: "markdown" }
-#       - widget: select
-#         label: "tags"
-#         name: "tags"
-#         multiple: true
-#         create: true
-#         options: ["Tags", "created", "from", "config.yml"]
-#   - label: "Settings"
-#     name: "settings"
-#     editor:
-#       preview: false
-#     files:
-#       - label: "Navigation"
-#         name: "items"
-#         file: "src/_data/navigation.yaml"
-#         fields:
-#           - label: Nav Items
-#             name: items
-#             widget: list
-#             allow_add: false
-#             collapsed: false
-#             fields:
-#               - { label: Title, name: text, widget: string }
-#               - { label: URL, name: url, widget: string }
-#       - label: "Quick Links"
-#         name: "links"
-#         file: "src/_data/quicklinks.yaml"
-#         fields:
-#           - label: Nav Items
-#             name: links
-#             widget: list
-#             collapsed: false
-#             fields:
-#               - { label: Title, name: title, widget: string }
-#               - { label: URL, name: url, widget: string }
-#               - { label: Description, name: desc, widget: string }
-#       - label: "Meta Settings"
-#         name: "settings"
-#         file: "src/_data/settings.yaml"
-#         fields:
-#           - { label: Name, name: name, widget: string }
-#           - { label: Author, name: author, widget: string }
-#           - { label: URL, name: url, widget: string }

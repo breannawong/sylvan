@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      {{title}}
-    </title>
+    {# -----------------------
+     SEO TITLE
+     ----------------------- #}
+    {% if page.url == "/" %}
+      {% set pageTitle = seo.title or "Sylvan Wedding Films | Wedding Videographer in Pittsburgh" %}
+    {% elif page.url == "/inquire/" %}
+      {% set pageTitle = seo.title or "Inquire | Sylvan Wedding Films" %}
+    {% else %}
+      {% set pageTitle = seo.title or title %}
+    {% endif %}
+
+    <title>{{ pageTitle }}</title>
+
+    {# -----------------------
+       META DESCRIPTION
+       ----------------------- #}
+    {% if seo.description %}
+      <meta name="description" content="{{ seo.description }}">
+    {% endif %}
+
+    {# -----------------------
+       OG TAGS
+       ----------------------- #}
+    {% if seo.og_title %}
+      <meta property="og:title" content="{{ seo.og_title }}">
+    {% else %}
+      <meta property="og:title" content="{{ pageTitle }}">
+    {% endif %}
+
+    {% if seo.og_description %}
+      <meta property="og:description" content="{{ seo.og_description }}">
+    {% elif seo.description %}
+      <meta property="og:description" content="{{ seo.description }}">
+    {% endif %}
+
+    {% if seo.og_image %}
+      <meta property="og:image" content="{{ seo.og_image }}">
+    {% endif %}
+
+    {# -----------------------
+       OPTIONAL: Twitter card
+       ----------------------- #}
+    <meta name="twitter:card" content="summary_large_image">
+    {% if seo.og_title %}
+      <meta name="twitter:title" content="{{ seo.og_title }}">
+    {% else %}
+      <meta name="twitter:title" content="{{ pageTitle }}">
+    {% endif %}
+    {% if seo.og_description %}
+      <meta name="twitter:description" content="{{ seo.og_description }}">
+    {% elif seo.description %}
+      <meta name="twitter:description" content="{{ seo.description }}">
+    {% endif %}
+    {% if seo.og_image %}
+      <meta name="twitter:image" content="{{ seo.og_image }}">
+    {% endif %}
+
     {% if description %}
       <meta name="description" content="{{description}}"/>
     {% endif %}
