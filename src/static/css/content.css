@@ -2,6 +2,13 @@
 	.filmmaker-bg {
 		background-image: none !important;
 	}
+	.filmmaker-bg .container {
+		padding-inline: 0;
+	}
+	.filmmaker-bg .floating-card {
+		background-color: transparent;
+		padding: 0;
+	}
 }
 
 @media (min-width: 480px) {
