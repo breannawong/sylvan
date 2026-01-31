@@ -51,7 +51,7 @@ philosophy:
     beauty reveals itself slowly and without spectacle.
 
 
-    We approach every wedding with patience and a filmmaker’s eye, crafting films that don’t just show what happened, but preserve how it felt. Test
+    We approach every wedding with patience and a filmmaker’s eye, crafting films that don’t just show what happened, but preserve how it felt.
   image: https://res.cloudinary.com/dmds5npfk/image/upload/v1768843752/Our_Philosophy_m5wbmj.jpg
   image_alt: A woodland wedding
 couples:
