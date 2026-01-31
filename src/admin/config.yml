@@ -1,10 +1,11 @@
 backend:
   # Use netlify identity as backend
-  name: git-gateway
-  branch: master
+  # name: git-gateway
+  # branch: master
   ### enable below lines for github integration ###
-  # name: github
-  # repo: surjithctly/neat-starter
+  name: github
+  repo: breannawong/sylvan
+  branch: master
 media_folder: "src/static/img"
 public_folder: "/static/img"
 
@@ -15,7 +16,7 @@ media_library:
     api_key: 772218142563972
 
 # Please run "npx netlify-cms-proxy-server" for local backend
-local_backend: true
+# local_backend: true
 # publish_mode: editorial_workflow
 collections:
 
