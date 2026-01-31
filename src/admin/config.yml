@@ -5,6 +5,7 @@ backend:
   ### enable below lines for github integration ###
   name: github
   repo: breannawong/sylvan
+  auth_endpoint: https://api.netlify.com/auth
 
 site_url: https://sylvanweddings.com
 oauth:
