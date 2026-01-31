@@ -1,14 +1,15 @@
 backend:
   # Use netlify identity as backend
   # name: git-gateway
-  # branch: master
+  branch: master
   ### enable below lines for github integration ###
   name: github
   repo: breannawong/sylvan
-  branch: master
+
 site_url: https://sylvanweddings.com
-  oauth:
-    client_id: Ov23liRsBAeNgqdB9Baj
+oauth:
+  client_id: Ov23liRsBAeNgqdB9Baj
+
 media_folder: "src/static/img"
 public_folder: "/static/img"
 
