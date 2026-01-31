@@ -1,9 +1,9 @@
 backend:
   # Use netlify identity as backend
-  # name: git-gateway
+  name: git-gateway
   branch: master
   ### enable below lines for github integration ###
-  name: github
+  # name: github
   repo: breannawong/sylvan
   auth_endpoint: https://api.netlify.com/auth
 
