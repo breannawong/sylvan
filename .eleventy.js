@@ -38,6 +38,9 @@ module.exports = function (eleventyConfig) {
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("./src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("./src/site.webmanifest");
 
   eleventyConfig.addPassthroughCopy({ "src/static/css": "static/css" });
 

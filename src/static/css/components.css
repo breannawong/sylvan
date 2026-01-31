@@ -132,7 +132,26 @@
 
 .hero h1 {
   font-size: var(--font-size-hero);
+}
+
+.hero h2 {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-h3);
+}
+
+.hero h1, 
+.hero h2 {
+  text-shadow: 0px 0px 4px var(--color-surface-overlay);
+  color: color-mix(in srgb, var(--color-text-inverse) 50%, white 50%);
+}
+
+.hero-overlay-content {
   text-align: center;
+}
+
+.hero-overlay-content .btn {
+  margin: var(--space-d) auto;
 }
 
 

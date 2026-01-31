@@ -44,6 +44,8 @@ hero:
   headline: Naturally cinematic wedding films
   background_image: https://res.cloudinary.com/dmds5npfk/image/upload/v1768837686/sylvan-hero_onjksa.jpg
   background_image_alt: A woodland scene
+  subhead: Based in Pittsburgh, available worldwide
+  button_label: Get started
 philosophy:
   heading: Our Philosophy
   text: >-

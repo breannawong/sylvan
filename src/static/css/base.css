@@ -6,6 +6,16 @@ html {
   line-height: var(--line-height-body, 1.6);
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: var(--font-weight-heading, 700);
@@ -39,7 +49,7 @@ h6 {
 }
 
 p {
-  margin-bottom: var(--space-md, 1rem);
+  margin-bottom: var(--space-d);
 }
 
 a {

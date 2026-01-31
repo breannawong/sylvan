@@ -21,7 +21,7 @@ media_library:
     api_key: 772218142563972
 
 # Please run "npx netlify-cms-proxy-server" for local backend
-# local_backend: true
+local_backend: true
 # publish_mode: editorial_workflow
 collections:
 
@@ -40,6 +40,8 @@ collections:
             widget: "object"
             fields:
               - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+              - { label: "Button Label", name: "button_label", widget: "string" }
               - { label: "Background Image", name: "background_image", widget: "image" }
               - { label: "Background Image Alt", name: "background_image_alt", widget: "string" }
 
