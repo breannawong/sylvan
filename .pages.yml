@@ -25,7 +25,7 @@ content:
           - { name: description, label: Meta Description, type: text }
           - { name: og_title, label: OG Title, type: string }
           - { name: og_description, label: OG Description, type: text }
-          - { name: og_image, label: OG Image, type: image }
+          - { name: og_image, label: OG Image (Cloudinary URL), type: string }
 
       - name: hero
         label: Hero
@@ -34,7 +34,7 @@ content:
           - { name: headline, label: Headline, type: string }
           - { name: subhead, label: Subhead, type: string }
           - { name: button_label, label: Button Label, type: string }
-          - { name: background_image, label: Background Image, type: image }
+          - { name: background_image, label: Background Image (Cloudinary URL), type: string }
           - { name: background_image_alt, label: Background Image Alt, type: string }
 
       - name: philosophy
@@ -43,7 +43,7 @@ content:
         fields:
           - { name: heading, label: Heading, type: string }
           - { name: text, label: Text, type: rich-text }
-          - { name: image, label: Philosophy Image, type: image }
+          - { name: image, label: Philosophy Image (Cloudinary URL), type: string }
           - { name: image_alt, label: Philosophy Image Alt, type: string }
 
       - name: couples
@@ -52,14 +52,14 @@ content:
         fields:
           - { name: heading, label: Heading, type: string }
           - { name: text, label: Text, type: rich-text }
-          - { name: image, label: Couples Image, type: image }
+          - { name: image, label: Couples Image (Cloudinary URL), type: string }
 
       - name: filmmaker
         label: Filmmaker
         type: object
         fields:
           - { name: heading, label: Heading, type: string }
-          - { name: image, label: Filmmaker Image, type: image }
+          - { name: image, label: Filmmaker Image (Cloudinary URL), type: string }
           - { name: text, label: Text, type: rich-text }
 
       - name: experience
@@ -68,7 +68,7 @@ content:
         fields:
           - { name: heading, label: Heading, type: string }
           - { name: text, label: Text, type: rich-text }
-          - { name: image, label: Experience Image, type: image }
+          - { name: image, label: Experience Image (Cloudinary URL), type: string }
           - { name: image_alt, label: Experience Image Alt, type: string }
 
       - name: inquiry_cta
@@ -92,7 +92,7 @@ content:
     fields:
       - { name: title, label: Title, type: string }
       - { name: featured, label: Featured on Homepage, type: boolean, default: false }
-      - { name: thumbnail, label: Thumbnail Image, type: image }
+      - { name: thumbnail, label: Thumbnail Image (Cloudinary URL), type: string }
       - { name: video_url, label: Video URL (Vimeo or YouTube), type: string }
       - { name: order, label: Order, type: number }
 
@@ -110,7 +110,7 @@ content:
       - { name: title, label: Title, type: string }
       - { name: layout, label: Layout, type: string, hidden: true, default: layouts/page.njk }
       - { name: body, label: Body, type: rich-text }
-      - { name: image, label: Page Image, type: image }
+      - { name: image, label: Page Image (Cloudinary URL), type: string }
       - { name: image_alt, label: Page Image Alt, type: string }
 
       - name: seo
@@ -121,7 +121,7 @@ content:
           - { name: description, label: Meta Description, type: text }
           - { name: og_title, label: OG Title, type: string }
           - { name: og_description, label: OG Description, type: text }
-          - { name: og_image, label: OG Image, type: image }
+          - { name: og_image, label: OG Image (Cloudinary URL), type: string }
 
 
   # =========================
