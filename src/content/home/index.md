@@ -12,7 +12,7 @@ seo:
     select destinations.
   og_image: https://res.cloudinary.com/dmds5npfk/image/upload/v1768843752/The_Experience-Kelsey_and_Will-Altar_rtm8p7.jpg
 hero:
-  headline: Naturally cinematic wedding films
+  headline: Naturally cinematic wedding films.
   subhead: Based in Pittsburgh, available worldwide
   button_label: Get started
   background_image: https://res.cloudinary.com/dmds5npfk/image/upload/v1768837686/sylvan-hero_onjksa.jpg
