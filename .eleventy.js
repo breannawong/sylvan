@@ -87,16 +87,10 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
       output: "_site"
-    }
-  };
-
-
-  // Let Eleventy transform HTML files as nunjucks
-  // So that we can use .html instead of .njk
-  return {
-    dir: {
-      input: "src",
     },
+      // Let Eleventy transform HTML files as nunjucks
+  // So that we can use .html instead of .njk
     htmlTemplateEngine: "njk",
   };
+
 };
