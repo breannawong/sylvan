@@ -149,7 +149,8 @@ content:
 
       - name: fields
         label: Fields
-        type: list
+        type: object
+        list: true
         fields:
           - { name: label, label: Label, type: string }
           - { name: name, label: Name (no spaces), type: string }
