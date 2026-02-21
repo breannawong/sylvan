@@ -1,158 +1,158 @@
+media:
+  input: src/media
+  output: /media
+
 content:
+
   # =========================
   # HOME PAGE (single file)
   # =========================
-  - name: "home"
-    label: "Home Page"
-    files:
-      - name: "home"
-        label: "Homepage Content"
-        file: "src/content/home/index.md"
+  - name: home
+    label: Home Page
+    type: file
+    path: src/content/home/index.md
+    fields:
+
+      - name: seo
+        label: SEO
+        type: object
         fields:
-          - label: "SEO"
-            name: "seo"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "SEO Title", name: "title", widget: "string", default: "Sylvan Wedding Films | Wedding Videographer in Pittsburgh" }
-              - { label: "Meta Description", name: "description", widget: "text" }
-              - { label: "OG Title", name: "og_title", widget: "string" }
-              - { label: "OG Description", name: "og_description", widget: "text" }
-              - { label: "OG Image", name: "og_image", widget: "image" }
+          - { name: title, label: SEO Title, type: string }
+          - { name: description, label: Meta Description, type: text }
+          - { name: og_title, label: OG Title, type: string }
+          - { name: og_description, label: OG Description, type: text }
+          - { name: og_image, label: OG Image, type: image }
 
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Headline", name: "headline", widget: "string" }
-              - { label: "Subhead", name: "subhead", widget: "string" }
-              - { label: "Button Label", name: "button_label", widget: "string" }
-              - { label: "Background Image", name: "background_image", widget: "image" }
-              - { label: "Background Image Alt", name: "background_image_alt", widget: "string" }
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: headline, label: Headline, type: string }
+          - { name: subhead, label: Subhead, type: string }
+          - { name: button_label, label: Button Label, type: string }
+          - { name: background_image, label: Background Image, type: image }
+          - { name: background_image_alt, label: Background Image Alt, type: string }
 
-          - label: "Philosophy"
-            name: "philosophy"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Text", name: "text", widget: "markdown" }
-              - { label: "Philosophy Image", name: "image", widget: "image" }
-              - { label: "Philosophy Image Alt", name: "image_alt", widget: "string" }
+      - name: philosophy
+        label: Philosophy
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: text, label: Text, type: rich-text }
+          - { name: image, label: Philosophy Image, type: image }
+          - { name: image_alt, label: Philosophy Image Alt, type: string }
 
-          - label: "For Couples Who"
-            name: "couples"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Text", name: "text", widget: "markdown" }
-              - { label: "Couples Image", name: "image", widget: "image" }
+      - name: couples
+        label: For Couples Who
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: text, label: Text, type: rich-text }
+          - { name: image, label: Couples Image, type: image }
 
-          - label: "Filmmaker"
-            name: "filmmaker"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Filmmaker Image", name: "image", widget: "image" }
-              - { label: "Text", name: "text", widget: "markdown" }
+      - name: filmmaker
+        label: Filmmaker
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: image, label: Filmmaker Image, type: image }
+          - { name: text, label: Text, type: rich-text }
 
-          - label: "Experience"
-            name: "experience"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Text", name: "text", widget: "markdown" }
-              - { label: "Experience Image", name: "image", widget: "image" }
-              - { label: "Experience Image Alt", name: "image_alt", widget: "string" }
+      - name: experience
+        label: Experience
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: text, label: Text, type: rich-text }
+          - { name: image, label: Experience Image, type: image }
+          - { name: image_alt, label: Experience Image Alt, type: string }
 
-          - label: "Inquiry CTA"
-            name: "inquiry_cta"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Heading", name: "heading", widget: "string" }
-              - { label: "Text", name: "text", widget: "markdown" }
-              - { label: "Button Label", name: "button_label", widget: "string" }
+      - name: inquiry_cta
+        label: Inquiry CTA
+        type: object
+        fields:
+          - { name: heading, label: Heading, type: string }
+          - { name: text, label: Text, type: rich-text }
+          - { name: button_label, label: Button Label, type: string }
+
 
   # =========================
   # FILMS COLLECTION
   # =========================
-  - name: "films"
-    label: "Films"
-    folder: "src/content/films"
-    create: true
-    slug: "{{slug}}"
+  - name: films
+    label: Films
+    type: collection
+    path: src/content/films
+    view:
+      fields: [ title, featured, order ]
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false }
-      - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
-      - { label: "Video URL (Vimeo or YouTube)", name: "video_url", widget: "string" }
-      - { label: "Order", name: "order", widget: "number", required: true, hint: "Determines the order in which films appear" }
+      - { name: title, label: Title, type: string }
+      - { name: featured, label: Featured on Homepage, type: boolean, default: false }
+      - { name: thumbnail, label: Thumbnail Image, type: image }
+      - { name: video_url, label: Video URL (Vimeo or YouTube), type: string }
+      - { name: order, label: Order, type: number }
+
 
   # =========================
-  # PAGES COLLECTION (including Inquiry)
+  # PAGES COLLECTION
   # =========================
-  - name: "pages"
-    label: "Pages"
-    folder: "src/content/pages"
-    create: true
-    slug: "{{slug}}"
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/content/pages
+    view:
+      fields: [ title ]
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/page.njk" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Page Image", name: "image", widget: "image", required: false }
-      - { label: "Page Image Alt", name: "image_alt", widget: "string", required: false }
-      - label: "SEO"
-        name: "seo"
-        widget: "object"
-        collapsed: true
+      - { name: title, label: Title, type: string }
+      - { name: layout, label: Layout, type: string, hidden: true, default: layouts/page.njk }
+      - { name: body, label: Body, type: rich-text }
+      - { name: image, label: Page Image, type: image }
+      - { name: image_alt, label: Page Image Alt, type: string }
+
+      - name: seo
+        label: SEO
+        type: object
         fields:
-          - { label: "SEO Title", name: "title", widget: "string" }
-          - { label: "Meta Description", name: "description", widget: "text" }
-          - { label: "OG Title", name: "og_title", widget: "string" }
-          - { label: "OG Description", name: "og_description", widget: "text" }
-          - { label: "OG Image", name: "og_image", widget: "image" }
+          - { name: title, label: SEO Title, type: string }
+          - { name: description, label: Meta Description, type: text }
+          - { name: og_title, label: OG Title, type: string }
+          - { name: og_description, label: OG Description, type: text }
+          - { name: og_image, label: OG Image, type: image }
+
 
   # =========================
-  # FOOTER
+  # FOOTER (single file)
   # =========================
-  - name: "footer"
-    label: "Footer"
-    files:
-      - name: "footer"
-        label: "Footer Content"
-        file: "src/content/footer/footer.md"
-        fields:
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Location Heading", name: "location_heading", widget: "string" }
-          - { label: "Location Body", name: "location_body", widget: "markdown" }
-          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
-          - { label: "Contact Body", name: "contact_body", widget: "markdown" }
+  - name: footer
+    label: Footer
+    type: file
+    path: src/content/footer/footer.md
+    fields:
+      - { name: tagline, label: Tagline, type: string }
+      - { name: location_heading, label: Location Heading, type: string }
+      - { name: location_body, label: Location Body, type: rich-text }
+      - { name: contact_heading, label: Contact Heading, type: string }
+      - { name: contact_body, label: Contact Body, type: rich-text }
+
 
   # =========================
-  # FORMS
+  # FORMS (single file)
   # =========================
-  - name: "forms"
-    label: "Forms"
-    files:
-      - name: "inquiry"
-        label: "Inquiry Form"
-        file: "src/content/forms/inquiry.md"
+  - name: inquiry_form
+    label: Inquiry Form
+    type: file
+    path: src/content/forms/inquiry.md
+    fields:
+      - { name: title, label: Form Title, type: string }
+      - { name: form_name, label: Form Name, type: string }
+      - { name: submit_label, label: Submit Button Label, type: string }
+
+      - name: fields
+        label: Fields
+        type: list
         fields:
-          - { label: "Form Title", name: "title", widget: "string" }
-          - { label: "Form Name", name: "form_name", widget: "string" }
-          - { label: "Submit Button Label", name: "submit_label", widget: "string" }
-          - label: "Fields"
-            name: "fields"
-            widget: "list"
-            fields:
-              - { label: "Label", name: "label", widget: "string" }
-              - { label: "Name (no spaces)", name: "name", widget: "string" }
-              - label: "Type", name: "type", widget: "select", options: [text, email, textarea]
-              - { label: "Required", name: "required", widget: "boolean", default: false }
-              - { label: "Placeholder", name: "placeholder", widget: "string", required: false }
+          - { name: label, label: Label, type: string }
+          - { name: name, label: Name (no spaces), type: string }
+          - { name: type, label: Type, type: string }
+          - { name: required, label: Required, type: boolean, default: false }
+          - { name: placeholder, label: Placeholder, type: string }
