@@ -4,7 +4,7 @@ layout: layouts/home.njk
 seo:
   title: Sylvan Wedding Films | Wedding Videographer in Pittsburgh
   description: Naturally cinematic wedding films for couples who value presence,
-    story, and understated beauty. Based in Schvitzburg, available for select
+    story, and understated beauty. Based in Pittsburgh, available for select
     destinations.
   og_title: Sylvan Wedding Films
   og_description: Naturally cinematic wedding films for couples who value
