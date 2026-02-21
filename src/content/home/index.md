@@ -1,4 +1,6 @@
 ---
+permalink: /
+layout: layouts/home.njk
 seo:
   title: Sylvan Wedding Films | Wedding Videographer in Pittsburgh
   description: Naturally cinematic wedding films for couples who value presence,
