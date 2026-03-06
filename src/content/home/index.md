@@ -80,7 +80,7 @@ experience:
   image: https://res.cloudinary.com/dmds5npfk/image/upload/v1768843752/The_Experience-Kelsey_and_Will-Altar_rtm8p7.jpg
   image_alt: A beautifully decorated floral altar
 inquiry_cta:
-  heading: Inquiry
+  heading: Learn More
   text: >-
     If you’re planning a wedding and feel drawn to a quieter, more intentional
     way of remembering it, we’d love to hear about what you’re envisioning.
